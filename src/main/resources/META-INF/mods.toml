@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "headpats"
+version = "${version}"
+displayName = "Headpats"
+authors = "Bowserinator"
+description = '''
+Headpat your friends! A Forge 1.20.1 port of "Headpat a Friend!" by enjarai
+'''
+logoFile="assets/headpats/textures/misc/mod_logo.png"
+
+[[dependencies.headpats]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.headpats]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.headpats]]
+modId = "cloth_config"
+mandatory = true
+versionRange="[11.1.136,)"
+ordering = "AFTER"
+side = "BOTH"
