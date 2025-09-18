@@ -8,6 +8,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -52,6 +54,7 @@ public final class HeadpatMod {
 
         // net sync + state update
         @SubscribeEvent
+        @OnlyIn(Dist.CLIENT)
         public static void onClientTick(TickEvent.ClientTickEvent event) {
             if (event.phase != TickEvent.Phase.END) return;
             PatState.CLIENT_INSTANCE.clientTick();
@@ -68,6 +71,7 @@ public final class HeadpatMod {
 
         // First person roll when patted
         @SubscribeEvent
+        @OnlyIn(Dist.CLIENT)
         public static void onCameraSetup(ViewportEvent.ComputeCameraAngles event) {
             float roll = event.getRoll();
             if (event.getCamera().getFocusedEntity() instanceof PlayerEntity player) {
