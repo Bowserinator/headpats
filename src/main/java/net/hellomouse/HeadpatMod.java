@@ -41,6 +41,7 @@ public final class HeadpatMod {
     public static class ModEvents {
         // Right click = headpat!
         @SubscribeEvent
+        @OnlyIn(Dist.CLIENT)
         public static void onEntityInteract(PlayerInteractEvent.EntityInteractSpecific event) {
             PlayerEntity player = event.getEntity();
             Entity target = event.getTarget();
